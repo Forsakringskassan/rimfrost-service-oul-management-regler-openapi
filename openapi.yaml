@@ -1,0 +1,186 @@
+openapi: 3.0.3
+info:
+  title: Operativt uppgiftslager management API för regler
+  version: 1.0.0
+  description: API för att skapa och avsluta operativa uppgifter
+
+paths:
+  /uppgifter:
+    post:
+      summary: Skapa uppgift
+      description: Skapar en ny operativ uppgift i uppgiftslagret
+      operationId: createUppgift
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUppgiftRequest'
+      responses:
+        '201':
+          description: Uppgiften skapades
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UppgiftResponse'
+        '400':
+          description: Ogiltigt anrop
+        '500':
+          description: Internt serverfel
+
+  /uppgifter/{uppgiftId}/end:
+    post:
+      summary: Avsluta uppgift
+      description: Avslutar en befintlig operativ uppgift
+      operationId: endUppgift
+      parameters:
+        - name: uppgiftId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Unikt ID som identifierar uppgiften som ska avslutas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EndUppgiftRequest'
+      responses:
+        '200':
+          description: Uppgiften avslutades
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UppgiftResponse'
+        '400':
+          description: Ogiltigt anrop
+        '404':
+          description: Uppgiften hittades inte
+        '500':
+          description: Internt serverfel
+
+components:
+  schemas:
+    CreateUppgiftRequest:
+      type: object
+      title: CreateUppgiftRequest
+      properties:
+        version:
+          type: string
+          description: Regelns version
+        handlaggning_id:
+          type: string
+          format: uuid
+          description: Unikt ID som identifierar handläggningsärendet
+        individer:
+          type: array
+          items:
+            $ref: '#/components/schemas/Idtyp'
+          description: Lista av individer i ärendet
+        regel:
+          type: string
+          description: Namn på regeln
+        beskrivning:
+          type: string
+          description: Kortfattad beskrivning av uppgiften
+        verksamhetslogik:
+          type: string
+        roll:
+          type: string
+        url:
+          type: string
+        sub_topic:
+          type: string
+        cloudevent_attributes:
+          $ref: '#/components/schemas/CloudeventAttributes'
+        erbjudande:
+          $ref: '#/components/schemas/Erbjudande'
+      required:
+        - version
+        - handlaggning_id
+        - individer
+        - regel
+        - beskrivning
+        - verksamhetslogik
+        - roll
+        - url
+        - sub_topic
+        - cloudevent_attributes
+        - erbjudande
+
+    UppgiftResponse:
+      type: object
+      title: UppgiftResponse
+      properties:
+        uppgift_id:
+          type: string
+          format: uuid
+          description: Unikt ID som identifierar instansen av uppgifts-objektet
+        handlaggning_id:
+          type: string
+          format: uuid
+          description: Unikt ID som identifierar handläggningsärendet
+        cloudevent_attributes:
+          $ref: '#/components/schemas/CloudeventAttributes'
+        status:
+          title: status
+          type: string
+          description: Status för uppgiften
+      required:
+        - uppgift_id
+        - handlaggning_id
+        - cloudevent_attributes
+        - status
+
+    EndUppgiftRequest:
+      type: object
+      title: EndUppgiftRequest
+      properties:
+        reason:
+          type: string
+          description: Anledning till att uppgiften avslutas
+      required:
+        - reason
+
+    CloudeventAttributes:
+      type: object
+      title: CloudeventAttributes
+      additionalProperties:
+        type: string
+      description: CloudEvent-attribut som skickas med i request och returneras oförändrade i response och statusnotifikationer
+
+    Idtyp:
+      type: object
+      title: Idtyp
+      properties:
+        typ_id:
+          type: string
+          description: Unikt ID som identifierar vilken typ av värde som anges
+        varde:
+          type: string
+          description: ID-värde som identifieras av typ
+      required:
+        - typ_id
+        - varde
+      example:
+        typ_id: "4c34906c-03d9-425f-9a1a-062ef6eb88c7"
+        varde: "19901010-1234"
+
+    Erbjudande:
+      type: object
+      title: Erbjudande
+      properties:
+        id:
+          type: string
+          description: Unikt ID som identifierar vilket erbjudande som avses
+        namn:
+          type: string
+          description: Namn på erbjudandet
+      required:
+        - id
+        - namn
+      example:
+        id: "bab4c3cc-0697-4774-ac49-487222b7b237"
+        namn: "Ansökan om tillfällig vård av husdjur"
