@@ -4,12 +4,18 @@ info:
   version: 1.0.0
   description: API för att skapa och avsluta operativa uppgifter
 
+tags:
+  - name: regler
+    description: Operationer för att skapa och avsluta uppgifter
+
 paths:
   /uppgifter:
     post:
       summary: Skapa uppgift
       description: Skapar en ny operativ uppgift i uppgiftslagret
       operationId: createUppgift
+      tags:
+        - regler
       requestBody:
         required: true
         content:
@@ -33,6 +39,8 @@ paths:
       summary: Avsluta uppgift
       description: Avslutar en befintlig operativ uppgift
       operationId: endUppgift
+      tags:
+        - regler
       parameters:
         - name: uppgiftId
           in: path
