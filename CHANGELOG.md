@@ -1,3 +1,9 @@
+## 0.0.2 (2026-06-08)
+
+### Bug Fixes
+
+-  Add regler tag to generate ReglerApi instead of DefaultApi ([56fe7](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/56fe7250630450c) Ulf Slunga)  
+
 ## 0.0.1 (2026-06-08)
 
 ### Bug Fixes
