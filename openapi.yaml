@@ -101,10 +101,10 @@ components:
           type: string
         sub_topic:
           type: string
-        cloudevent_attributes:
-          $ref: '#/components/schemas/CloudeventAttributes'
         erbjudande:
           $ref: '#/components/schemas/Erbjudande'
+        process_info:
+          $ref: '#/components/schemas/ProcessInfo'
       required:
         - version
         - handlaggning_id
@@ -115,8 +115,8 @@ components:
         - roll
         - url
         - sub_topic
-        - cloudevent_attributes
         - erbjudande
+        - process_info
 
     UppgiftResponse:
       type: object
@@ -130,17 +130,17 @@ components:
           type: string
           format: uuid
           description: Unikt ID som identifierar handläggningsärendet
-        cloudevent_attributes:
-          $ref: '#/components/schemas/CloudeventAttributes'
         status:
           title: status
           type: string
           description: Status för uppgiften
+        process_info:
+          $ref: '#/components/schemas/ProcessInfo'
       required:
         - uppgift_id
         - handlaggning_id
-        - cloudevent_attributes
         - status
+        - process_info
 
     EndUppgiftRequest:
       type: object
@@ -158,6 +158,19 @@ components:
       additionalProperties:
         type: string
       description: CloudEvent-attribut som skickas med i request och returneras oförändrade i response och statusnotifikationer
+
+    ProcessInfo:
+      type: object
+      title: ProcessInfo
+      properties:
+        cloudevent_attributes:
+          $ref: '#/components/schemas/CloudeventAttributes'
+        reply_topic:
+          type: string
+      required:
+        - cloudevent_attributes
+        - reply_topic
+      description: Process information som skickas med i request och returneras oförändrad i response och statusnotifikationer
 
     Idtyp:
       type: object
