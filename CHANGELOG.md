@@ -1,3 +1,9 @@
+## 0.0.3 (2026-06-10)
+
+### Bug Fixes
+
+-  Refactor cloudevent_attributes to ProcessInfo ([dfa55](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/dfa55497a9c00df) Lars Persson)  
+
 ## 0.0.2 (2026-06-08)
 
 ### Bug Fixes
