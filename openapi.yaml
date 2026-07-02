@@ -82,11 +82,6 @@ components:
           type: string
           format: uuid
           description: Unikt ID som identifierar handläggningsärendet
-        individer:
-          type: array
-          items:
-            $ref: '#/components/schemas/Idtyp'
-          description: Lista av individer i ärendet
         regel:
           type: string
           description: Namn på regeln
@@ -108,7 +103,6 @@ components:
       required:
         - version
         - handlaggning_id
-        - individer
         - regel
         - beskrivning
         - verksamhetslogik
@@ -171,23 +165,6 @@ components:
         - cloudevent_attributes
         - reply_topic
       description: Process information som skickas med i request och returneras oförändrad i response och statusnotifikationer
-
-    Idtyp:
-      type: object
-      title: Idtyp
-      properties:
-        typ_id:
-          type: string
-          description: Unikt ID som identifierar vilken typ av värde som anges
-        varde:
-          type: string
-          description: ID-värde som identifieras av typ
-      required:
-        - typ_id
-        - varde
-      example:
-        typ_id: "4c34906c-03d9-425f-9a1a-062ef6eb88c7"
-        varde: "19901010-1234"
 
     Erbjudande:
       type: object
