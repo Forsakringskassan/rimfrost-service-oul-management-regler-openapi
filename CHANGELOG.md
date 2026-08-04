@@ -1,3 +1,18 @@
+## 0.0.4 (2026-08-04)
+
+### Bug Fixes
+
+-  **deps**  update dependency org.openapitools:jackson-databind-nullable to v0.2.11 ([2c85a](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/2c85adbabb83a07) renovate[bot])  
+-  **deps**  update jackson monorepo to v2.22.1 ([35430](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/35430858e5c575e) renovate[bot])  
+-  Remove individer field ([1182b](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/1182b783933f4a3) Lars Persson)  
+-  **deps**  update dependency se.fk.gradle:gradle-conventions to v1.18.3 ([eb552](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/eb55208f86a0adc) renovate[bot])  
+-  **deps**  update jackson monorepo ([ee3b7](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/ee3b78bafa3be62) renovate[bot])  
+-  **deps**  update dependency se.fk.gradle:gradle-conventions to v1.18.2 ([9c69e](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/9c69eca2797283f) renovate[bot])  
+
+### Dependency updates
+
+- update gradle to v9.6.1 ([87fdc](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/87fdc64b2e0fcf4) renovate[bot])  
+- update gradle to v9.6.0 ([2fa45](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/2fa453e37d88fd1) renovate[bot])  
 ## 0.0.3 (2026-06-10)
 
 ### Bug Fixes
