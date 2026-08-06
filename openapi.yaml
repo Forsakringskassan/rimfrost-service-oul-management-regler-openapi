@@ -69,6 +69,33 @@ paths:
         '500':
           description: Internt serverfel
 
+  /uppgifter/{uppgiftId}/unassign:
+    post:
+      summary: Lägg tillbaka uppgift i kön
+      description: Lägg tillbaka uppgift i kön
+      operationId: unassignUppgift
+      tags:
+        - regler
+      parameters:
+        - name: uppgiftId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Unikt ID som identifierar uppgiften som ska läggas tillbaka i kön
+      responses:
+        '200':
+          description: Uppgiften lades tillbaka i kön
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UppgiftResponse'
+        '404':
+          description: Uppgiften hittades inte
+        '500':
+          description: Internt serverfel
+
 components:
   schemas:
     CreateUppgiftRequest:
