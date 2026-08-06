@@ -1,3 +1,10 @@
+## 0.0.5 (2026-08-06)
+
+### Bug Fixes
+
+-  Improve unassign endpoint description and add 400 response ([5d2ac](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/5d2acc80c343a6b) Ulf Slunga)  
+-  Add unassign endpoint to OpenAPI spec ([70637](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/70637a1732dc8dc) Ulf Slunga)  
+
 ## 0.0.4 (2026-08-04)
 
 ### Bug Fixes
