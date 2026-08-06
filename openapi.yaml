@@ -72,7 +72,7 @@ paths:
   /uppgifter/{uppgiftId}/unassign:
     post:
       summary: Lägg tillbaka uppgift i kön
-      description: Lägg tillbaka uppgift i kön
+      description: Lägger tillbaka en tilldelad uppgift i kön så att den kan tilldelas på nytt
       operationId: unassignUppgift
       tags:
         - regler
@@ -91,6 +91,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UppgiftResponse'
+        '400':
+          description: Ogiltigt anrop
         '404':
           description: Uppgiften hittades inte
         '500':
