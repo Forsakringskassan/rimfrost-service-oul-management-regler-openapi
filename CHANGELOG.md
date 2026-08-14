@@ -1,3 +1,9 @@
+## 0.0.6 (2026-08-14)
+
+### Bug Fixes
+
+-  Remove unassign endpoint from OpenAPI spec ([9e6d5](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/9e6d50ca7f5d175) Ulf Slunga)  
+
 ## 0.0.5 (2026-08-06)
 
 ### Bug Fixes
