@@ -1,3 +1,14 @@
+## 0.0.7 (2026-09-21)
+
+### Bug Fixes
+
+-  **deps**  update jackson monorepo to v2.22.2 ([57688](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/57688b4321741eb) renovate[bot])  
+
+### Dependency updates
+
+- update gradle to v9.7.1 ([4fc66](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/4fc669a83a64e60) renovate[bot])  
+- pin forsakringskassan/.github action to d1349e6 ([eb7c3](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/eb7c3b93df9d978) renovate[bot])  
+- update gradle to v9.7.0 ([1f045](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/1f0454a684e3451) renovate[bot])  
 ## 0.0.6 (2026-08-14)
 
 ### Bug Fixes
