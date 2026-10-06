@@ -100,6 +100,9 @@ components:
           $ref: '#/components/schemas/Erbjudande'
         process_info:
           $ref: '#/components/schemas/ProcessInfo'
+        assignable:
+          type: boolean
+          description: Flagga som indikerar om uppgiften ska inkluderas i den normala tilldelningsprocessen i OUL
       required:
         - version
         - handlaggning_id
@@ -111,6 +114,7 @@ components:
         - sub_topic
         - erbjudande
         - process_info
+        - assignable
 
     UppgiftResponse:
       type: object
