@@ -99,7 +99,7 @@ components:
         erbjudande:
           $ref: '#/components/schemas/Erbjudande'
         process_info:
-          $ref: '#/components/schemas/ProcessInfo'
+          $ref: '#/components/schemas/CreateUppgiftProcessInfo'
         assignable:
           type: boolean
           description: Flagga som indikerar om uppgiften ska inkluderas i den normala tilldelningsprocessen i OUL
@@ -169,6 +169,22 @@ components:
         - cloudevent_attributes
         - reply_topic
       description: Process information som skickas med i request och returneras oförändrad i response och statusnotifikationer
+
+    CreateUppgiftProcessInfo:
+      title: CreateUppgiftProcessInfo
+      allOf:
+        - $ref: '#/components/schemas/ProcessInfo'
+        - type: object
+          properties:
+            aktivitet_id:
+              type: string
+              format: uuid
+              description: Valfritt. ID för den aktivitet i processen som uppgiften skapades i. Saknas när uppgiften inte skapats i en processaktivitet.
+            processvy_url:
+              type: string
+              description: Relativ sökväg till den mikrofrontend där processen visar sin processvy (stegindikatorn), t.ex. /process/vah. Samma format som uppgiftens url. Valfritt. Saknas när processen inte har någon processvy.
+              example: /process/vah
+      description: Process information när en uppgift skapas. Utöver ProcessInfo kan anges vilken aktivitet i processen uppgiften hör till och var processens processvy finns (båda valfria). Fälten aktivitet_id och processvy_url returneras inte i response eller statusnotifikationer.
 
     Erbjudande:
       type: object
