@@ -179,15 +179,12 @@ components:
             aktivitet_id:
               type: string
               format: uuid
-              description: ID för den aktivitet i processen som uppgiften skapades i
+              description: Valfritt. ID för den aktivitet i processen som uppgiften skapades i. Saknas när uppgiften inte skapats i en processaktivitet.
             processvy_url:
               type: string
-              description: Relativ sökväg till den mikrofrontend där processen visar sin processvy (stegindikatorn), t.ex. /process/vah. Samma format som uppgiftens url.
+              description: Relativ sökväg till den mikrofrontend där processen visar sin processvy (stegindikatorn), t.ex. /process/vah. Samma format som uppgiftens url. Valfritt. Saknas när processen inte har någon processvy.
               example: /process/vah
-          required:
-            - aktivitet_id
-            - processvy_url
-      description: Process information när en uppgift skapas. Utöver ProcessInfo anges vilken aktivitet i processen uppgiften hör till och var processens processvy finns. Fälten aktivitet_id och processvy_url returneras inte i response eller statusnotifikationer.
+      description: Process information när en uppgift skapas. Utöver ProcessInfo kan anges vilken aktivitet i processen uppgiften hör till och var processens processvy finns (båda valfria). Fälten aktivitet_id och processvy_url returneras inte i response eller statusnotifikationer.
 
     Erbjudande:
       type: object
