@@ -1,3 +1,25 @@
+## 0.1.0 (2026-10-27)
+
+### Features
+
+-  add required aktivitet_id and processvy_url to process_info (FKPOC-1151) ([386df](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/386df9df8313fbf) LisaWedin_Ductus)  
+
+### Bug Fixes
+
+-  update workflows ([3021d](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/3021d84302124df) Nils Elveros)  
+-  make aktivitet_id and processvy_url optional in process_info (FKPOC-1151) ([08fc3](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/08fc3b8a3227de1) LisaWedin_Ductus)  
+-  move aktivitet_id and processvy_url to request-only process info (FKPOC-1151) ([e7819](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/e7819b8df67bfbe) LisaWedin_Ductus)  
+-  downgrade Gradle from 9.8.1 to 9.7.1 ([ced59](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/ced590a340cb87f) Ulf Slunga)  
+-  **deps**  update jackson monorepo to v2.22.3 ([e0c6b](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/e0c6bbd0994ea74) renovate[bot])  
+-  **deps**  update dependency org.openapitools:jackson-databind-nullable to v0.2.12 ([8a25e](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/8a25e47e8933f1e) renovate[bot])  
+-  Add assignable flag to CreateUppgiftRequest type ([b1985](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/b198561eb94d17a) Lars Persson)  
+
+### Dependency updates
+
+- update gradle to v9.8.1 ([ef1a6](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/ef1a6f3ce877fd7) renovate[bot])  
+- update forsakringskassan/.github digest to cbd74f1 ([8ca52](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/8ca5256bab711f9) renovate[bot])  
+- update gradle to v9.8.1 ([2ddd9](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/2ddd9c3f6fed983) renovate[bot])  
+- update forsakringskassan/.github digest to bfb01f7 ([65040](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/65040104254e08a) renovate[bot])  
 ## 0.0.7 (2026-09-21)
 
 ### Bug Fixes
