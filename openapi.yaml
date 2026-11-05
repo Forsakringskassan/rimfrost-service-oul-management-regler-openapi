@@ -163,11 +163,8 @@ components:
       properties:
         cloudevent_attributes:
           $ref: '#/components/schemas/CloudeventAttributes'
-        reply_topic:
-          type: string
       required:
         - cloudevent_attributes
-        - reply_topic
       description: Process information som skickas med i request och returneras oförändrad i response och statusnotifikationer
 
     CreateUppgiftProcessInfo:
