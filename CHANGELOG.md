@@ -1,3 +1,11 @@
+## 0.1.1 (2026-11-05)
+
+### Bug Fixes
+
+-  Remove reply_topic from ProcessInfo ([c4b7b](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/c4b7bdc09abd3df) Lars Persson)  
+-  **deps**  update dependency org.openapitools:jackson-databind-nullable to v0.2.13 ([636fa](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/636fafd2427763f) renovate[bot])  
+-  **deps**  update jackson monorepo to v2.22.4 ([850a7](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/850a7daafa8a160) renovate[bot])  
+
 ## 0.1.0 (2026-10-27)
 
 ### Features
