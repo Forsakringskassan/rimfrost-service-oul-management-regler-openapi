@@ -69,6 +69,34 @@ paths:
         '500':
           description: Internt serverfel
 
+  /uppgifter/{uppgiftId}/utforare:
+    get:
+      summary: Hämta utförare för uppgift
+      description: Hämta tilldelad utförare för en befintlig operativ uppgift
+      operationId: getUppgiftUtforare
+      tags:
+        - regler
+      parameters:
+        - name: uppgiftId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Unikt ID som identifierar uppgiften
+      responses:
+        '200':
+          description: Förfrågan genomförd OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UppgiftUtforareResponse'
+        '404':
+          description: Uppgiften hittades inte
+        '500':
+          description: Internt serverfel
+
+
 components:
   schemas:
     CreateUppgiftRequest:
@@ -199,3 +227,30 @@ components:
       example:
         id: "bab4c3cc-0697-4774-ac49-487222b7b237"
         namn: "Ansökan om tillfällig vård av husdjur"
+
+    UppgiftUtforareResponse:
+      type: object
+      title: UppgiftUtforareResponse
+      properties:        
+        utforare:
+          allOf: [{$ref: '#/components/schemas/Idtyp'}]
+          nullable: true
+      required:
+        - utforare
+
+    Idtyp:
+      type: object
+      title: Idtyp
+      properties:
+        typ_id:
+          type: string
+          description: Unikt ID som identifierar vilken typ av värde som anges
+        varde:
+          type: string
+          description: ID-värde som identifieras av typ
+      required:
+        - typ_id
+        - varde
+      example:
+        typ_id: "4c34906c-03d9-425f-9a1a-062ef6eb88c7"
+        varde: "19901010-1234"
