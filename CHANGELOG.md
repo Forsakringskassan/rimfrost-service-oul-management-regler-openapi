@@ -1,3 +1,13 @@
+## 0.1.2 (2026-11-23)
+
+### Bug Fixes
+
+-  Add GET operation to fetch uppgift utforare ([d4ee8](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/d4ee86e1d43d338) Lars Persson)  
+-  **deps**  update jackson monorepo ([6386d](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/6386da97f9f3fe3) renovate[bot])  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to cbc0db8 ([099f9](https://github.com/Forsakringskassan/rimfrost-service-oul-management-regler-openapi/commit/099f93388a88811) renovate[bot])  
 ## 0.1.1 (2026-11-05)
 
 ### Bug Fixes
